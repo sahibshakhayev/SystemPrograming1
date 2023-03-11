@@ -1,0 +1,34 @@
+﻿<Window x:Class="SystemPr1.AddingToBlacklist"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemPr1"
+        mc:Ignorable="d"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Title="Add To Blacklist" Height="150" Width="250">
+
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#FFffff"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Label Name="EnterName" Content="  Enter name:" Foreground="White" FontSize="12" Grid.Row="0"/>
+        <TextBox Name="Tb" Foreground="Black" FontSize="20" Margin="10,5,10,10" Grid.Row="1"/>
+        <Button Grid.Row="2" Name="submitButton" Foreground="Black" Background="#FFffff" Content="Submit" Width="97" HorizontalAlignment="Center" Click="Button_Click_Submit" Margin="0,8,0,10" BorderBrush="#FF3089B4">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>

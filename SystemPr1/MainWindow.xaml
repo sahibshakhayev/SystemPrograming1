@@ -1,0 +1,74 @@
+﻿<Window x:Class="SystemPr1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SystemPr1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#FFffff"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="84*"/>
+            <RowDefinition Height="264*"/>
+            <RowDefinition Height="65*"/>
+            <RowDefinition Height="21*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Add List" Grid.Column="4" Grid.Row="1" Foreground="Black" Background="White" Margin="102,132,10,94" BorderBrush="#FF3089B4" Click="Button_Click_Add_List" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="End Task" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="117" Grid.Column="4" Grid.Row="1" Margin="102,193,0,0" BorderBrush="Black" Background="White" Foreground="Black" Click="Button_Click_End_Task" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Run new Task" HorizontalAlignment="Left" VerticalAlignment="Top" Height="43" Width="117" Grid.Column="4" Grid.Row="1" Margin="102,72,0,0" BorderBrush="#FF3089B4" Background="White" Foreground="Black" Click="Button_Click_Run_new_Task" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Add to Blacklist" HorizontalAlignment="Left" VerticalAlignment="Top" Height="43" Width="117" Grid.Column="4" Grid.Row="1" Margin="102,10,0,0" BorderBrush="#FF3089B4" Background="white" Foreground="Black" Click="Button_Click_Add_to_Blacklist" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <!--TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Background="#FF20221F" Grid.ColumnSpan="6" Height="259" Width="686" Grid.Row="1" Margin="57,0,0,0" Foreground="White"/-->
+        <Border Grid.Row="0" Grid.Column="0" BorderBrush="#FF3089B4" Background="#FFF" BorderThickness="1" Grid.ColumnSpan="6" Margin="0,10,10,10">
+            <StackPanel Orientation="Vertical" Margin="95,343,170,-345" >
+                <Label x:Name="Threads" Content="Threads:" Foreground="Black" Height="25" FontWeight="Bold" FontSize="11" Width="60"/>
+                <Label x:Name="NumberofThreads" Content="0" Width="80" FontSize="11"/>
+            </StackPanel>
+        </Border>
+        <ListView x:Name="processesList" d:ItemsSource="{d:SampleData ItemCount=111}" Grid.ColumnSpan="5" Margin="0,5,77,5" Background="#FFff" BorderBrush="#FF3089B4" Foreground="Black" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}" Width="158"/>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="166"/>
+                    <GridViewColumn Header="Handle Count" DisplayMemberBinding="{Binding HandleCount}" Width="170"/>
+                    <GridViewColumn Header="Threads Count" DisplayMemberBinding="{Binding ThreadsCount}" Width="130"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
